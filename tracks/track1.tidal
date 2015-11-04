@@ -1,0 +1,20 @@
+
+-- Track 1
+-- Here's where things have ended up
+-- Manipulate and decide how to progress this
+
+bps(60/120)
+
+hush
+
+d1 $ degradeBy 0.3 $ every 7 (0.125 <~) $ stack [
+  slow 2 $ stut 6 0.5 0.5 $ sound "koto:2" # pan (slow 4 $ sine1),
+  every 5 (|*| up "3") $ every 3 (|*| up "7") $ slow 2 $ sound "koto:7",
+  slow 2 $ sound "~ e:4",
+  slow 2 $ sound "[~ ~ ~ ~ ~ e:4 ~]",
+  slow 2 $ sound "[~ bd:9 ~]",
+  slow 2 $ sound "[~ ~ ~ ~ jungbass:1 ~ jungbass:1]",
+  every 5 (|*| up "12") $ every 7 (|*| up "5") $ slow 2 $ sound "[~ ~ ~ cello:34 ~ ~ cello:34]" # gain (slow 4 $ scale 0.2 0.6 sine1),
+  slow 2 $ sound "[~ ~ ~ cello:32 ~ ~ cello:30]" # gain (slow 4 $ scale 0.2 0.6 sine1),
+  every 11 (|*| up "12") $ degrade $ slow 2 $ sound "cello:37" # gain "0.8"
+]

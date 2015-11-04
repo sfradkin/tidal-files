@@ -1,0 +1,37 @@
+------------------------------------------------------
+| sfradkin | Scott Fradkin | @sfradkin | fradkin.com |
+|                                                    |
+| 10/01/2015                                         |
+| Experimenting today, low bass expected             |
+------------------------------------------------------
+
+bps (60/120)
+
+d1 $ stack [
+  density 4 $ sound "[sine1:0,sine1:1]" |+| gain "1.5",
+  sound "bd:9 bd:9 bd:9 bd:9",
+  density 2 $ sound "e:4 e:4 e:4 e:4",
+  jux (striate 64) $ sound "~ cp ~ cp",
+  sound "~ tabla ~ [tabla ~]",
+  jux (rev . stut 5 0.3 0.8) $ chop 8 $ sound "~ notes:4 ~ ~ ~ notes:7 ~ notes:9"
+]
+
+hush
+
+d1 $ stack [
+  sound "sinelong:0" |+| gain "1.4" |+| begin "0.15" |+| pan "0",
+  sound "sinelong:4" |+| gain "1.4" |+| begin "0.15" |+| pan "1",
+  density 2 $ sound "bd:9 bd:9 bd:9 bd:9",
+  density 4 $ sound "e:4? e:4 e:4? e:4",
+  jux(striate 32 . rev . iter 4) $ sound "notes:3 [notes:2 notes:7] ~ notes:1 [notes:4 ~ notes:9] notes:0 ~" |+| delay "0.2",
+  whenmod 8 4 (rev) $ slowspread ($) [stut 8 0.3 0.4, stut 4 0.5 0.5, rev, jux(rev), iter 4] $ density 2 $ sound "~ cp? [~ cp ~ cp?] ~ ~ cp"
+]
+
+d1 $ stack [
+  sound "sinelong:8" |+| gain "1.4" |+| begin "0.2" |+| pan "0",
+  sound "sinelong:16" |+| gain "1.4" |+| begin "0.2" |+| pan "1",
+  sound "[bd:9, bd:9] [bd:9 ~] bd:9 [bd:9 ~ bd:9]" |+| gain "1.2",
+  iter 4 $ density 2 $ sound "~ [cp ~ cp ~] ~ [cp ~ cp*2]" |+| delay "0.2" ,
+  density 4 $ sound "e:4 e:4 e:4 e:4",
+  slowspread ($) [striate 32, striate 8, rev . striate 8] $ sound "wind:0 ~ wind:2 ~ ~ wind:4"
+]

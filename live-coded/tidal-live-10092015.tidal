@@ -1,0 +1,47 @@
+------------------------------------------------------
+| sfradkin | Scott Fradkin | @sfradkin | fradkin.com |
+|                                                    |
+| 10/16/2015                                         |
+| You might hear many experiments and LOW bass       |
+------------------------------------------------------
+
+bps(60/120)
+
+hush
+
+d1 $ stack [
+  sound "e:4 ~ e:4*2 ~ e:4 e:4",
+  sound "bd:9*2 ~ bd:9" |+| gain "0.8",
+  sound "cp ~ ~ cp*2 ~ cp" |+| gain "0.6",
+  sound "sinelong:16" |+| begin "0.2" |+| gain "1" |+| pan "0",
+  sound "sinelong:20" |+| begin "0.2" |+| gain "1" |+| pan "1"
+]
+
+d1 $ stack [
+  jux(rev . iter 4) $ sound "e:4 ~ [~ e:4*3 ~] e:4*2",
+  sound "bd:9*2 [~ bd:9*2 ~]",
+  slowspread ($) [stut 4 0.2 0.2, striate 128, striate 256] $ sound "cp ~ [cp*2 ~ ~] cp*2 ~",
+  striate 64 $ sound "water:6",
+  sound "~ water:7",
+  sound "sinelong:10" |+| begin "0.2" |+| gain "1" |+| pan "0",
+  sound "sinelong:0" |+| begin "0.2" |+| gain "2" |+| pan "0.9"
+]
+
+d1 $ stack [
+  sound "sinelong2:5" |+| begin "0.2" |+| gain "0.8" |+| pan "0",
+  sound "sinelong2:6" |+| begin "0.2" |+| gain "0.8" |+| pan "1",
+  sound "[bd:9*3 [bd:9*2 bd:9 bd:9*2]]/2",
+  sound "e:4(6,8)",
+  sound "cp*3" |+| gain "0.7",
+  sound "wind:0 [[wind:0 wind:3 ~] [~ wind:7 wind:4 ~]]/2",
+  sound "[water:0 water:1]"
+]
+
+d1 $ stack [
+  slowspread ($) [striate 16, rev, striate 32, chop 32, striate 64] $ sound "creak:1" |+| gain "0.7" |+| cut "1" |+| end "0.25" |+| begin "0.1",
+  sound "bd:9(3, 8) bd:9*2" |+| gain "0.8",
+  sound "e:4 e:4 ~ e:4" |+| gain "0.8",
+  density 4 $ sound "e:4*4" |+| gain "0.4",
+  striate 128 $ sound "e:4*16" |+| gain "0.5",
+  sound "[sinelong2:5 sinelong2:6]/2" |+| begin "0.2" |+| end "0.5" |+| gain "1.2"
+]

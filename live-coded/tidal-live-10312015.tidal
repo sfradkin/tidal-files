@@ -1,0 +1,22 @@
+------------------------------------------------------
+| sfradkin | Scott Fradkin | @sfradkin | fradkin.com |
+|                                                    |
+| 10/31/2015                                         |
+| You might hear many experiments and LOW bass       |
+| Use headphones or nice speakers to hear the effect |
+------------------------------------------------------
+
+Thanks for listening!
+
+bps(60/120)
+
+hush
+
+d1 $ stack [
+  every 12 (|+| up "-7") $ every 7 (|+| up "-17") $ every 4 (|+| up "2") $ sound "notes:0*16" # gain (slow 2 $ scale 0.2 0.8 sine1) # up "-12" # pan (slow 2 $ sine1)
+]
+
+sound "e:4*2" # gain "0.9 1.3",
+sound "e:4*8" # gain "0.6",
+sound "cp ~ [~ cp] [cp ~]" # gain "0.7",
+sound "bd:9(5,8) bd:9" # gain "0.6",
