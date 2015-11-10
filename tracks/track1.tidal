@@ -1,20 +1,278 @@
-
--- Track 1
--- Here's where things have ended up
--- Manipulate and decide how to progress this
+--------------------------------------------------------------
+| sfradkin | Scott Fradkin | @sfradkin | fradkin.com         |
+|                                                            |
+| 11-2015                                                    |
+|                                                            |
+| The Chaos Around Us Approximates Waterfalls                |
+|                                                            |
+| This track requires the following sample sets:             |
+| koto - By Fantom57                                         |
+|  - http://www.freesound.org/people/Fantom57/packs/10022/   |
+| cello - By flcellogrl                                      |
+|  - http://www.freesound.org/people/flcellogrl/packs/12408/ |
+| e - From the default Dirt samples                          |
+| bd - From the default Dirt samples                         |
+| jungbass - From the default Dirt samples                   |
+|                                                            |
+| Samples can be found in the samples directory of this repo |
+|                                                            |
+| This track requires Tidal v0.6                             |
+| To approximate the recorded track, execute blocks from     |
+| top to bottom of the file.                                 |
+--------------------------------------------------------------
 
 bps(60/120)
 
-hush
+d1 $ stack [
+  slow 2 $ sound "koto:2"
+]
 
-d1 $ degradeBy 0.3 $ every 7 (0.125 <~) $ stack [
-  slow 2 $ stut 6 0.5 0.5 $ sound "koto:2" # pan (slow 4 $ sine1),
-  every 5 (|*| up "3") $ every 3 (|*| up "7") $ slow 2 $ sound "koto:7",
+d1 $ stack [
+  slow 2 $ sound "koto:2",
+  slow 2 $ sound "~ e:4"
+]
+
+d1 $ stack [
+  slow 2 $ sound "koto:2",
+  slow 2 $ sound "~ e:4",
+  slow 2 $ sound "[~ bd:9 ~]"
+]
+
+d1 $ stack [
+  slow 2 $ sound "koto:2",
+  slow 2 $ sound "koto:7",
+  slow 2 $ sound "~ e:4",
+  slow 2 $ sound "[~ bd:9 ~]"
+]
+
+d1 $ stack [
+  slow 2 $ sound "koto:2",
+  slow 2 $ sound "koto:7" # nudge "0.05",
+  slow 2 $ sound "~ e:4",
+  slow 2 $ sound "[~ bd:9 ~]"
+]
+
+d1 $ stack [
+  slow 2 $ sound "koto:2",
+  every 3 (|*| up "7") $ slow 2 $ sound "koto:7" # nudge "0.05",
+  slow 2 $ sound "~ e:4",
+  slow 2 $ sound "[~ bd:9 ~]"
+]
+
+d1 $ stack [
+  slow 2 $ sound "koto:2",
+  every 5 (|*| up "3") $ every 3 (|*| up "7") $ slow 2 $ sound "koto:7" # nudge "0.05",
+  slow 2 $ sound "~ e:4",
+  slow 2 $ sound "[~ bd:9 ~]"
+]
+
+d1 $ stack [
+  slow 2 $ stut 6 0.5 0.5 $ sound "koto:2",
+  every 5 (|*| up "3") $ every 3 (|*| up "7") $ slow 2 $ sound "koto:7" # nudge "0.05",
+  slow 2 $ sound "~ e:4",
+  slow 2 $ sound "[~ bd:9 ~]"
+]
+
+d1 $ stack [
+  slow 2 $ stut 6 0.5 0.5 $ sound "koto:2" # pan (slow 8 $ sine1),
+  every 5 (|*| up "3") $ every 3 (|*| up "7") $ slow 2 $ sound "koto:7" # nudge "0.05",
+  slow 2 $ sound "~ e:4",
+  slow 2 $ sound "[~ bd:9 ~]"
+]
+
+d1 $ stack [
+  slow 2 $ stut 6 0.5 0.5 $ sound "koto:2" # pan (slow 8 $ sine1),
+  every 5 (|*| up "3") $ every 3 (|*| up "7") $ slow 2 $ sound "koto:7" # nudge "0.05",
+  slow 2 $ sound "~ e:4",
+  slow 2 $ sound "[~ ~ ~ ~ ~ e:4 ~]",
+  slow 2 $ sound "[~ bd:9 ~]"
+]
+
+d1 $ stack [
+  slow 2 $ stut 6 0.5 0.5 $ sound "koto:2" # pan (slow 8 $ sine1),
+  every 5 (|*| up "3") $ every 3 (|*| up "7") $ slow 2 $ sound "koto:7" # nudge "0.05",
+  slow 2 $ sound "~ e:4",
+  slow 2 $ sound "[~ ~ ~ ~ ~ e:4 ~]",
+  slow 2 $ sound "[~ bd:9 ~]",
+  slow 2 $ sound "[~ ~ ~ cello:34 ~ ~ cello:34]" # gain (slow 4 $ scale 0.2 0.6 sine1)
+]
+
+d1 $ stack [
+  slow 2 $ stut 6 0.5 0.5 $ sound "koto:2" # pan (slow 8 $ sine1),
+  every 5 (|*| up "3") $ every 3 (|*| up "7") $ slow 2 $ sound "koto:7" # nudge "0.05",
+  slow 2 $ sound "~ e:4",
+  slow 2 $ sound "[~ ~ ~ ~ ~ e:4 ~]",
+  slow 2 $ sound "[~ bd:9 ~]",
+  every 5 (|*| up "12") $ every 7 (|*| up "5") $ slow 2 $ sound "[~ ~ ~ cello:34 ~ ~ cello:34]" # gain (slow 4 $ scale 0.2 0.6 sine1)
+]
+
+d1 $ stack [
+  slow 2 $ stut 6 0.5 0.5 $ sound "koto:2" # pan (slow 8 $ sine1),
+  every 5 (|*| up "3") $ every 3 (|*| up "7") $ slow 2 $ sound "koto:7" # nudge "0.05",
+  slow 2 $ sound "~ e:4",
+  slow 2 $ sound "[~ ~ ~ ~ ~ e:4 ~]",
+  slow 2 $ sound "[~ bd:9 ~]",
+  every 5 (|*| up "12") $ every 7 (|*| up "5") $ slow 2 $ sound "[~ ~ ~ cello:34 ~ ~ cello:34]" # gain (slow 4 $ scale 0.2 0.6 sine1),
+  slow 2 $ sound "[~ ~ ~ cello:32 ~ ~ cello:30]" # gain (slow 8 $ scale 0.2 0.6 sine1)
+]
+
+d1 $ stack [
+  slow 2 $ stut 6 0.5 0.5 $ sound "koto:2" # pan (slow 8 $ sine1),
+  every 5 (|*| up "3") $ every 3 (|*| up "7") $ slow 2 $ sound "koto:7" # nudge "0.05",
+  slow 2 $ sound "~ e:4",
+  slow 2 $ sound "[~ ~ ~ ~ ~ e:4 ~]",
+  slow 2 $ sound "[~ bd:9 ~]",
+  every 5 (|*| up "12") $ every 7 (|*| up "5") $ slow 2 $ sound "[~ ~ ~ cello:34 ~ ~ cello:34]" # gain (slow 4 $ scale 0.2 0.6 sine1),
+  slow 2 $ sound "[~ ~ ~ cello:32 ~ ~ cello:30]" # gain (slow 8 $ scale 0.2 0.6 sine1),
+  every 11 (|*| up "12") $ degrade $ slow 2 $ sound "cello:37" # gain "0.8"
+]
+
+d1 $ stack [
+  slow 2 $ stut 6 0.5 0.5 $ sound "koto:2" # pan (slow 8 $ sine1),
+  every 5 (|*| up "3") $ every 3 (|*| up "7") $ slow 2 $ sound "koto:7" # nudge "0.05",
   slow 2 $ sound "~ e:4",
   slow 2 $ sound "[~ ~ ~ ~ ~ e:4 ~]",
   slow 2 $ sound "[~ bd:9 ~]",
   slow 2 $ sound "[~ ~ ~ ~ jungbass:1 ~ jungbass:1]",
   every 5 (|*| up "12") $ every 7 (|*| up "5") $ slow 2 $ sound "[~ ~ ~ cello:34 ~ ~ cello:34]" # gain (slow 4 $ scale 0.2 0.6 sine1),
-  slow 2 $ sound "[~ ~ ~ cello:32 ~ ~ cello:30]" # gain (slow 4 $ scale 0.2 0.6 sine1),
+  slow 2 $ sound "[~ ~ ~ cello:32 ~ ~ cello:30]" # gain (slow 8 $ scale 0.2 0.6 sine1),
   every 11 (|*| up "12") $ degrade $ slow 2 $ sound "cello:37" # gain "0.8"
 ]
+
+d1 $ every 5 (0.125 <~) $ stack [
+  slow 2 $ stut 6 0.5 0.5 $ sound "koto:2" # pan (slow 8 $ sine1),
+  every 5 (|*| up "3") $ every 3 (|*| up "7") $ slow 2 $ sound "koto:7" # nudge "0.05",
+  slow 2 $ sound "~ e:4",
+  slow 2 $ sound "[~ ~ ~ ~ ~ e:4 ~]",
+  slow 2 $ sound "[~ bd:9 ~]",
+  slow 2 $ sound "[~ ~ ~ ~ jungbass:1 ~ jungbass:1]",
+  every 5 (|*| up "12") $ every 7 (|*| up "5") $ slow 2 $ sound "[~ ~ ~ cello:34 ~ ~ cello:34]" # gain (slow 4 $ scale 0.2 0.6 sine1),
+  slow 2 $ sound "[~ ~ ~ cello:32 ~ ~ cello:30]" # gain (slow 8 $ scale 0.2 0.6 sine1),
+  every 11 (|*| up "12") $ degrade $ slow 2 $ sound "cello:37" # gain "0.8"
+]
+
+d1 $ degradeBy 0.3 $ every 5 (0.125 <~) $ stack [
+  slow 2 $ stut 6 0.5 0.5 $ sound "koto:2" # pan (slow 8 $ sine1),
+  every 5 (|*| up "3") $ every 3 (|*| up "7") $ slow 2 $ sound "koto:7" # nudge "0.05",
+  slow 2 $ sound "~ e:4",
+  slow 2 $ sound "[~ ~ ~ ~ ~ e:4 ~]",
+  slow 2 $ sound "[~ bd:9 ~]",
+  slow 2 $ sound "[~ ~ ~ ~ jungbass:1 ~ jungbass:1]",
+  every 5 (|*| up "12") $ every 7 (|*| up "5") $ slow 2 $ sound "[~ ~ ~ cello:34 ~ ~ cello:34]" # gain (slow 4 $ scale 0.2 0.6 sine1),
+  slow 2 $ sound "[~ ~ ~ cello:32 ~ ~ cello:30]" # gain (slow 8 $ scale 0.2 0.6 sine1),
+  every 11 (|*| up "12") $ degrade $ slow 2 $ sound "cello:37" # gain "0.8"
+]
+
+d1 $ degradeBy 0.3 $ stack [
+  slow 2 $ stut 6 0.5 0.5 $ sound "koto:2" # pan (slow 8 $ sine1),
+  every 5 (|*| up "3") $ every 3 (|*| up "7") $ slow 2 $ sound "koto:7" # nudge "0.05",
+  slow 2 $ sound "~ e:4",
+  slow 2 $ sound "[~ ~ ~ ~ ~ e:4 ~]",
+  slow 2 $ sound "[~ bd:9 ~]",
+  slow 2 $ sound "[~ ~ ~ ~ jungbass:1 ~ jungbass:1]",
+  every 5 (|*| up "12") $ every 7 (|*| up "5") $ slow 2 $ sound "[~ ~ ~ cello:34 ~ ~ cello:34]" # gain (slow 4 $ scale 0.2 0.6 sine1),
+  slow 2 $ sound "[~ ~ ~ cello:32 ~ ~ cello:30]" # gain (slow 8 $ scale 0.2 0.6 sine1),
+  every 11 (|*| up "12") $ degrade $ slow 2 $ sound "cello:37" # gain "0.8"
+]
+
+d1 $ degradeBy 0.6 $ stack [
+  slow 2 $ stut 6 0.5 0.5 $ sound "koto:2" # pan (slow 8 $ sine1),
+  every 5 (|*| up "3") $ every 3 (|*| up "7") $ slow 2 $ sound "koto:7" # nudge "0.05",
+  slow 2 $ sound "~ e:4",
+  slow 2 $ sound "[~ ~ ~ ~ ~ e:4 ~]",
+  slow 2 $ sound "[~ bd:9 ~]",
+  slow 2 $ sound "[~ ~ ~ ~ jungbass:1 ~ jungbass:1]",
+  every 5 (|*| up "12") $ every 7 (|*| up "5") $ slow 2 $ sound "[~ ~ ~ cello:34 ~ ~ cello:34]" # gain (slow 4 $ scale 0.2 0.6 sine1),
+  slow 2 $ sound "[~ ~ ~ cello:32 ~ ~ cello:30]" # gain (slow 8 $ scale 0.2 0.6 sine1),
+  every 11 (|*| up "12") $ degrade $ slow 2 $ sound "cello:37" # gain "0.8"
+]
+
+d1 $ stack [
+  slow 2 $ stut 6 0.5 0.5 $ sound "koto:2" # pan (slow 8 $ sine1),
+  every 5 (|*| up "3") $ every 3 (|*| up "7") $ slow 2 $ sound "koto:7" # nudge "0.05",
+  slow 2 $ sound "~ e:4",
+  slow 2 $ sound "[~ ~ ~ ~ ~ e:4 ~]",
+  slow 2 $ sound "[~ bd:9 ~]",
+  slow 2 $ sound "[~ ~ ~ ~ jungbass:1 ~ jungbass:1]",
+  every 5 (|*| up "12") $ every 7 (|*| up "5") $ slow 2 $ sound "[~ ~ ~ cello:34 ~ ~ cello:34]" # gain (slow 4 $ scale 0.2 0.6 sine1),
+  slow 2 $ sound "[~ ~ ~ cello:32 ~ ~ cello:30]" # gain (slow 8 $ scale 0.2 0.6 sine1),
+  every 11 (|*| up "12") $ degrade $ slow 2 $ sound "cello:37" # gain "0.8"
+]
+
+d1 $ stack [
+  slow 2 $ stut 6 0.5 0.5 $ sound "koto:2" # pan (slow 8 $ sine1),
+  every 5 (|*| up "3") $ every 3 (|*| up "7") $ slow 2 $ sound "koto:7" # nudge "0.05",
+  slow 2 $ sound "~ e:4",
+  slow 2 $ sound "[~ ~ ~ ~ ~ e:4 ~]",
+  slow 2 $ sound "[~ bd:9 ~]",
+  slow 2 $ sound "[~ ~ ~ ~ jungbass:1 ~ jungbass:1]",
+  every 5 (|*| up "12") $ every 7 (|*| up "5") $ slow 2 $ sound "[~ ~ ~ cello:34 ~ ~ cello:34]" # gain "0.5",
+  slow 2 $ sound "[~ ~ ~ cello:32 ~ ~ cello:30]" # gain "0.5"
+]
+
+d1 $ stack [
+  slow 2 $ stut 6 0.5 0.5 $ sound "koto:2" # pan (slow 8 $ sine1),
+  every 5 (|*| up "3") $ every 3 (|*| up "7") $ slow 2 $ sound "koto:7" # nudge "0.05",
+  slow 2 $ sound "~ e:4",
+  slow 2 $ sound "[~ ~ ~ ~ ~ e:4 ~]",
+  slow 2 $ sound "[~ bd:9 ~]",
+  slow 2 $ sound "[~ ~ ~ ~ jungbass:1 ~ jungbass:1]",
+  every 5 (|*| up "12") $ every 7 (|*| up "5") $ slow 2 $ sound "[~ ~ ~ cello:34 ~ ~ cello:34]" # gain "0.4",
+  slow 2 $ sound "[~ ~ ~ cello:32 ~ ~ cello:30]" # gain "0.4"
+]
+
+d1 $ stack [
+  slow 2 $ stut 6 0.5 0.5 $ sound "koto:2" # pan (slow 8 $ sine1),
+  every 5 (|*| up "3") $ every 3 (|*| up "7") $ slow 2 $ sound "koto:7" # nudge "0.05",
+  slow 2 $ sound "~ e:4",
+  slow 2 $ sound "[~ ~ ~ ~ ~ e:4 ~]",
+  slow 2 $ sound "[~ bd:9 ~]",
+  slow 2 $ sound "[~ ~ ~ ~ jungbass:1 ~ jungbass:1]",
+  every 5 (|*| up "12") $ every 7 (|*| up "5") $ slow 2 $ sound "[~ ~ ~ cello:34 ~ ~ cello:34]" # gain "0.3",
+  slow 2 $ sound "[~ ~ ~ cello:32 ~ ~ cello:30]" # gain "0.3"
+]
+
+d1 $ stack [
+  slow 2 $ stut 6 0.5 0.5 $ sound "koto:2" # pan (slow 8 $ sine1) # gain "0.8",
+  every 5 (|*| up "3") $ every 3 (|*| up "7") $ slow 2 $ sound "koto:7" # nudge "0.05",
+  slow 2 $ sound "~ e:4",
+  slow 2 $ sound "[~ ~ ~ ~ ~ e:4 ~]",
+  slow 2 $ sound "[~ bd:9 ~]",
+  slow 2 $ sound "[~ ~ ~ ~ jungbass:1 ~ jungbass:1]",
+  every 5 (|*| up "12") $ every 7 (|*| up "5") $ slow 2 $ sound "[~ ~ ~ cello:34 ~ ~ cello:34]" # gain "0.2",
+  slow 2 $ sound "[~ ~ ~ cello:32 ~ ~ cello:30]" # gain "0.2"
+]
+
+d1 $ stack [
+  slow 2 $ stut 6 0.5 0.5 $ sound "koto:2" # pan (slow 8 $ sine1) # gain "0.6",
+  every 5 (|*| up "3") $ every 3 (|*| up "7") $ slow 2 $ sound "koto:7" # nudge "0.05",
+  slow 2 $ sound "~ e:4",
+  slow 2 $ sound "[~ ~ ~ ~ ~ e:4 ~]",
+  slow 2 $ sound "[~ jungbass:1 ~]",
+  slow 2 $ sound "[~ ~ ~ ~ jungbass:1 ~ jungbass:1]"
+]
+
+d1 $ stack [
+  slow 2 $ stut 6 0.5 0.5 $ sound "koto:2" # pan (slow 8 $ sine1) # gain "0.4",
+  every 5 (|*| up "3") $ every 3 (|*| up "7") $ slow 2 $ sound "koto:7" # nudge "0.05",
+  slow 2 $ sound "~ e:4",
+  slow 2 $ sound "[~ ~ ~ ~ ~ e:4 ~]",
+  slow 2 $ sound "[~ jungbass:1 ~]",
+  slow 2 $ sound "[~ ~ ~ ~ jungbass:1 ~ jungbass:1]"
+]
+
+d1 $ stack [
+  slow 2 $ stut 6 0.5 0.5 $ sound "koto:2" # pan (slow 8 $ sine1) # gain "0.3",
+  every 5 (|*| up "3") $ every 3 (|*| up "7") $ slow 2 $ sound "koto:7" # nudge "0.05" # gain "0.7",
+  slow 2 $ sound "~ e:4",
+  slow 2 $ sound "[~ ~ ~ ~ ~ e:4 ~]",
+  slow 2 $ sound "[~ jungbass:1 ~]",
+  slow 2 $ sound "[~ ~ ~ ~ jungbass:1 ~ jungbass:1]"
+]
+
+d1 $ stack [
+  slow 2 $ stut 6 0.5 0.5 $ sound "koto:2" # pan (slow 8 $ sine1) # gain "0.3",
+  every 5 (|*| up "3") $ every 3 (|*| up "7") $ slow 2 $ sound "koto:7" # nudge "0.05" # gain "0.7"
+]
+
+hush
