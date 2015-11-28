@@ -1,5 +1,8 @@
 # kindohm remix
-Remix of [Kindohm's](http://kindohm.com) Atmospheric Probe Malfunction, Track 9 from his recent [Expedition](https://kindohm.bandcamp.com/album/expedition) album.
+Remix of [Kindohm's](http://kindohm.com) Atmospheric Probe Malfunction
+by Scott Fradkin [fradkin.com](http://www.fradkin.com)
+
+Track 9 from Kindohm's recent [Expedition](https://kindohm.bandcamp.com/album/expedition) album.
 
 Licensed under a [Creative Commons Attribution-ShareAlike](http://creativecommons.org/licenses/by-sa/4.0/) license
 
