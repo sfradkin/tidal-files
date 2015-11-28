@@ -1,0 +1,66 @@
+------------------------------------------------------
+| sfradkin | Scott Fradkin | @sfradkin | fradkin.com |
+|                                                    |
+| 11/10/2015                                         |
+| You might hear many experiments and LOW bass       |
+| Use headphones or nice speakers to hear the effect |
+------------------------------------------------------
+
+Thanks for listening!
+
+bps(60/120)
+
+hush
+
+d1 $ stack [
+  every 12 (|+| up "-7") $ every 7 (|+| up "-17") $ every 4 (|+| up "2") $ sound "notes:0*16" # gain (slow 2 $ scale 0.2 0.8 sine1) # up "-12" # pan (slow 2 $ sine1)
+]
+
+sound "e:4*2" # gain "0.9 1.3",
+sound "e:4*8" # gain "0.6",
+sound "cp ~ [~ cp] [cp ~]" # gain "0.7",
+sound "bd:9(5,8) bd:9" # gain "0.6",
+
+d1 $ sound "bd:9(5,8) bd:9" # gain "0.6"
+
+let ghost'' a f p = superimpose (((a/2 + a*2) ~>) . f) $ superimpose (((a + a/2) ~>) . f) $ p
+
+let ghost' a s p = ghost'' a ((|*| gain "0.7") . (|=| end "0.2") . (|*| speed s)) p
+
+let ghost p = ghost' 0.125 "1.25" p
+
+
+    d1 $ ghost $ sound "bd:1(3,8)"
+
+    d1 $ ghost $ sound "bd:1(3,7)"
+
+    d1 $ ghost $ sound "bd:1"
+
+    d1 $ ghost $ sound "jungbass:6"
+
+    d1 $ jux(ghost' (0.125) "2") $ ghost' (-0.125) "2" $ sound "jungbass:6"
+
+    d2 $ sound "jungbass:1(5,8)"
+
+    d1 $ jux(rev) $ ghost $ sound "notes [notes:1 notes]"
+
+    d1 $ ghost'' (0.125) ((|*| gain "0.7") . (|+| accelerate "-2")) $ sound "bass2(3,8)"
+
+hush
+
+d1 $ stack [
+  every 4 (# up "12") $ every 2 (|*| up "7") $ sound "lwbass:26" # cut "1",
+  every 2 (# up "-5") $ sound "lwstring:0" # cut "2"
+]
+
+d1 $ stack [
+  sound "[bd:9 bd] ~ [bd:9 bd] ~" # up "-5",
+  sound "~ ~ sn:3 ~" # up "-2" # gain "0.7",
+  stut 10 0.25 0.5 $ sound "~ cp ~ ~ " # up "-3",
+  sound "[hh:0 hh:0] ~ hh:0 [hh:0 hh:0 hh:0] ",
+  every 2 (# up "7") $ every 5 (# up "-3") $ every 3 (# up "9") $ sound "lwbass:26" # gain "0.7",
+  every 4 (# up "-5") $ every 3 (# up "3") $ sound "lwpad:1" # cut "1" # gain "0.65",
+  every 3 (# up "-12") $ sound "lwethno:30 lwethno:29",
+  sound "~ jungbass:7",
+  sound "lwbass:9"
+]
